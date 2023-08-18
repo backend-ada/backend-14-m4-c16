@@ -6,11 +6,11 @@
 
 Es muy frecuente tener que desarrollar bloques de código los cuales puedan resultar en algún error. Por ejemplo, cuando las acciones que realizan no dependen enteramente de ellos, sino que se tienen que valer de contenido que está subido a Internet. O cuando solicitamos cierta información y por algún motivo no se envían los parámetros necesarios correctamente.
 
-Uno de los escenarios posibles es cuando necesitamos consumir datos de una API alojada en la nube o en alguna red local **¿Qué pasa si justo se corta Internet?\*\***¿Qué pasa si justo se cae el servidor?\***\*¿O si no envié los parámetros correctos en la solicitud?**
+Uno de los escenarios posibles es cuando necesitamos consumir datos de una API alojada en la nube o en alguna red local **¿Qué pasa si justo se corta Internet?** **¿Qué pasa si justo se cae el servidor?** **¿O si no envié los parámetros correctos en la solicitud?**
 
 Todo esto produce errores al momento de ejecución del programa. Esos errores, si no se manejan correctamente, nos detienen el programa. Para evitar esto, existe una herramienta nativa de **JavaScript** que permite probar bloques de código en una zona segura, para que, en caso de error, podamos atraparlo y procesarlo, y así poder determinar qué hacer:
 
-<img src="https://camo.githubusercontent.com/12042360128788875874366064e7624f59ff6c07efe07b39d61bef37442af94f/68747470733a2f2f692e6962622e636f2f64306a64324c4c2f556e7469746c65642d323032332d30382d31372d323331322e706e67">
+<p align="center"><img src="https://camo.githubusercontent.com/12042360128788875874366064e7624f59ff6c07efe07b39d61bef37442af94f/68747470733a2f2f692e6962622e636f2f64306a64324c4c2f556e7469746c65642d323032332d30382d31372d323331322e706e67"></p>
 
 Con la sentencia `Try...Catch(e)` podemos ejecutar un grupo de sentencias en un entorno seguro para poder procesar el error y determinar acciones según el resultado. En el módulo `resolucion-try-catch.ts` se hace uso de la sentencia `Try...Catch(e)` para hacer un manejo de errores básico.
 
