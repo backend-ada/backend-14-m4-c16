@@ -38,7 +38,9 @@ async function fetchData(url: URL, requestOptions?: RequestOptions) {
 
 		const response = await fetch(url);
 
+		// Chequeo que la respuesta tenga error
 		if (!response.ok) {
+			// Arrojo un nuevo objecto Network Error.
 			throw new NetworkError(`Request failed with status ${response.status}`);
 		}
 
@@ -47,6 +49,7 @@ async function fetchData(url: URL, requestOptions?: RequestOptions) {
 	} catch (error) {
 		if (error instanceof NetworkError) {
 			console.error('Network Error:', error.message);
+			// Retorno null para poder usarlo en la línea 65 y evitar que el programa imprima NaN en la terminal.
 			return null;
 		} else {
 			console.error('Error:', error);
@@ -62,7 +65,9 @@ async function getPrice() {
 	console.log('USD -->', usdPrice);
 	console.log('GOLD -->', goldPrice);
 
+	// En el caso de que se haya ejecutado el catch(), entonces la expresión booleana del IF resulta en true.
 	if (usdPrice === null || goldPrice === null) {
+		// Imprimo en la terminal que no retorno resultados por falta de datos.
 		console.error(
 			'Can not get result because of error while gathering data...'
 		);
@@ -70,7 +75,8 @@ async function getPrice() {
 	}
 
 	const result = goldPrice * usdPrice;
-	return console.log(result);
+	console.log(result);
+	return;
 }
 
 getPrice();
